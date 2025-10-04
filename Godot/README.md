@@ -1,0 +1,3 @@
+sudo chown -R $USER:$USER CodeForSeedney
+
+docker run -it --rm     -e DISPLAY=$DISPLAY     -v /tmp/.X11-unix:/tmp/.X11-unix     -v $HOME/.Xauthority:/home/devuser/.Xauthority:rw     -e XAUTHORITY=/home/devuser/.Xauthority     -v $(pwd)/CodeForSeedney:/workspace/CodeForSeedney     --device /dev/dri:/dev/dri     --group-add video     --user $(id -u):$(id -g)     -e XDG_RUNTIME_DIR=/tmp/runtime-root     -e PULSE_SERVER=unix:/tmp/pulse     -v /run/user/1000/pulse/native:/tmp/pulse     godot-farming
